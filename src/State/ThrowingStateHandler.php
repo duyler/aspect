@@ -26,7 +26,7 @@ class ThrowingStateHandler implements ActionThrowingStateHandlerInterface
             $stateService->getContainer()->bind($advice->bind);
             $stateService->getContainer()->addProviders($advice->providers);
             $adviceHandler = $stateService->getContainer()->get($advice->advice);
-            $adviceHandler->advice($stateService->getException(), $stateService->getAction());
+            $adviceHandler($stateService->getException(), $stateService->getAction());
         }
     }
 
