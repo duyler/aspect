@@ -1,0 +1,38 @@
+{
+    "name": "duyler/aspect",
+    "type": "library",
+    "description": "Duyler AOP implementation",
+    "license": "MIT",
+    "keywords": [],
+    "authors": [
+        {
+            "name": "Mikhail Ilinsky",
+            "email": "mail@milinsky.ru"
+        }
+    ],
+    "support": {
+        "docs": "https://duyler.org/docs/aspect/"
+    },
+    "require": {
+        "php": "^8.3",
+        "duyler/event-bus": "dev-main",
+        "duyler/framework": "dev-main"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^10.0",
+        "friendsofphp/php-cs-fixer": "^3.30",
+        "squizlabs/php_codesniffer": "^4.0",
+        "vimeo/psalm": "^5.0"
+    },
+    "minimum-stability": "dev",
+    "autoload": {
+        "psr-4": {
+            "Duyler\\Aspect\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Duyler\\Aspect\\Test\\": ["tests/"]
+        }
+    }
+}
