@@ -24,7 +24,7 @@ class BeforeStateHandler implements ActionBeforeStateHandlerInterface
             $stateService->getContainer()->bind($advice->bind);
             $stateService->getContainer()->addProviders($advice->providers);
             $adviceHandler = $stateService->getContainer()->get($advice->advice);
-            $adviceHandler->advice($stateService->getArgument(), $stateService->getAction());
+            $adviceHandler($stateService->getArgument(), $stateService->getAction());
         }
     }
 

@@ -24,7 +24,7 @@ class AfterStateHandler implements ActionAfterStateHandlerInterface
             $stateService->getContainer()->bind($advice->bind);
             $stateService->getContainer()->addProviders($advice->providers);
             $adviceHandler = $stateService->getContainer()->get($advice->advice);
-            $adviceHandler->advice($stateService->getResultData(), $stateService->getAction());
+            $adviceHandler($stateService->getResultData(), $stateService->getAction());
         }
     }
 
