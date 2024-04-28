@@ -9,7 +9,7 @@ use Duyler\Aspect\Build\Attribute\After;
 use Duyler\Aspect\Build\Attribute\Around;
 use Duyler\Aspect\Build\Attribute\Before;
 use Duyler\Aspect\Build\Attribute\Throwing;
-use Duyler\EventBus\Dto\Action;
+use Duyler\ActionBus\Dto\Action;
 use Duyler\Framework\Build\AttributeHandlerInterface;
 use InvalidArgumentException;
 

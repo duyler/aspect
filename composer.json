@@ -15,7 +15,7 @@
     },
     "require": {
         "php": "^8.3",
-        "duyler/event-bus": "dev-main",
+        "duyler/action-bus": "dev-main",
         "duyler/framework": "dev-main"
     },
     "require-dev": {
