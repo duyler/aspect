@@ -10,7 +10,7 @@ use Duyler\Aspect\State\AroundStateHandler;
 use Duyler\Aspect\State\BeforeStateHandler;
 use Duyler\Aspect\State\ThrowingStateHandler;
 use Duyler\DependencyInjection\ContainerInterface;
-use Duyler\EventBus\Dto\Context;
+use Duyler\ActionBus\Dto\Context;
 use Duyler\Framework\Loader\LoaderServiceInterface;
 use Duyler\Framework\Loader\PackageLoaderInterface;
 

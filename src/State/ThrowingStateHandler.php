@@ -6,10 +6,10 @@ namespace Duyler\Aspect\State;
 
 use Closure;
 use Duyler\Aspect\AdviceStorage;
-use Duyler\EventBus\Contract\State\ActionThrowingStateHandlerInterface;
-use Duyler\EventBus\Formatter\IdFormatter;
-use Duyler\EventBus\State\Service\StateActionThrowingService;
-use Duyler\EventBus\State\StateContext;
+use Duyler\ActionBus\Contract\State\ActionThrowingStateHandlerInterface;
+use Duyler\ActionBus\Formatter\IdFormatter;
+use Duyler\ActionBus\State\Service\StateActionThrowingService;
+use Duyler\ActionBus\State\StateContext;
 use Override;
 
 class ThrowingStateHandler implements ActionThrowingStateHandlerInterface
