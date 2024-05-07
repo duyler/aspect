@@ -7,7 +7,7 @@ namespace Duyler\Aspect\State;
 use Closure;
 use Duyler\Aspect\AdviceStorage;
 use Duyler\ActionBus\Contract\State\ActionAfterStateHandlerInterface;
-use Duyler\ActionBus\Formatter\IdFormatter;
+use Duyler\ActionBus\Formatter\ActionIdFormatter;
 use Duyler\ActionBus\State\Service\StateActionAfterService;
 use Duyler\ActionBus\State\StateContext;
 
@@ -17,7 +17,7 @@ class AfterStateHandler implements ActionAfterStateHandlerInterface
 
     public function handle(StateActionAfterService $stateService, StateContext $context): void
     {
-        foreach ($this->adviceStorage->getAfter(IdFormatter::format($stateService->getAction()->id)) as $advice) {
+        foreach ($this->adviceStorage->getAfter(ActionIdFormatter::toString($stateService->getAction()->id)) as $advice) {
             if ($advice->advice instanceof Closure) {
                 ($advice->advice)($stateService->getResultData(), $stateService->getAction());
                 return;

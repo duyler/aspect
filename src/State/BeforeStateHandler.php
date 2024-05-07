@@ -7,7 +7,7 @@ namespace Duyler\Aspect\State;
 use Closure;
 use Duyler\Aspect\AdviceStorage;
 use Duyler\ActionBus\Contract\State\ActionBeforeStateHandlerInterface;
-use Duyler\ActionBus\Formatter\IdFormatter;
+use Duyler\ActionBus\Formatter\ActionIdFormatter;
 use Duyler\ActionBus\State\Service\StateActionBeforeService;
 use Duyler\ActionBus\State\StateContext;
 
@@ -17,7 +17,7 @@ class BeforeStateHandler implements ActionBeforeStateHandlerInterface
 
     public function handle(StateActionBeforeService $stateService, StateContext $context): void
     {
-        foreach ($this->adviceStorage->getBefore(IdFormatter::format($stateService->getAction()->id)) as $advice) {
+        foreach ($this->adviceStorage->getBefore(ActionIdFormatter::toString($stateService->getAction()->id)) as $advice) {
             if ($advice->advice instanceof Closure) {
                 ($advice->advice)($stateService->getArgument(), $stateService->getAction());
                 return;

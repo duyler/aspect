@@ -7,7 +7,7 @@ namespace Duyler\Aspect\State;
 use Closure;
 use Duyler\Aspect\AdviceStorage;
 use Duyler\ActionBus\Contract\State\ActionThrowingStateHandlerInterface;
-use Duyler\ActionBus\Formatter\IdFormatter;
+use Duyler\ActionBus\Formatter\ActionIdFormatter;
 use Duyler\ActionBus\State\Service\StateActionThrowingService;
 use Duyler\ActionBus\State\StateContext;
 use Override;
@@ -19,7 +19,7 @@ class ThrowingStateHandler implements ActionThrowingStateHandlerInterface
     #[Override]
     public function handle(StateActionThrowingService $stateService, StateContext $context): void
     {
-        foreach ($this->adviceStorage->getThrowing(IdFormatter::format($stateService->getAction()->id)) as $advice) {
+        foreach ($this->adviceStorage->getThrowing(ActionIdFormatter::toString($stateService->getAction()->id)) as $advice) {
             if ($advice->advice instanceof Closure) {
                 ($advice->advice)($stateService->getException(), $stateService->getAction());
                 return;
