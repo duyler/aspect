@@ -8,6 +8,7 @@ use Duyler\Aspect\AdviceStorage;
 use Duyler\Aspect\Build\Attribute\After;
 use Duyler\Aspect\Build\Attribute\Around;
 use Duyler\Aspect\Build\Attribute\Before;
+use Duyler\Aspect\Build\Attribute\Suspend;
 use Duyler\Aspect\Build\Attribute\Throwing;
 use Duyler\ActionBus\Dto\Action;
 use Duyler\Framework\Build\AttributeHandlerInterface;
@@ -61,6 +62,15 @@ class AttributeHandler implements AttributeHandlerInterface
         }
 
         $this->adviceStorage->addThrowing($item->id, $throwing);
+    }
+
+    public function handleSuspend(Suspend $suspend, mixed $item): void
+    {
+        if (false === $item instanceof Action) {
+            $this->throwInvalidTypeException($item);
+        }
+
+        $this->adviceStorage->addSuspend($item->id, $suspend);
     }
 
     private function throwInvalidTypeException(mixed $item): never

@@ -7,6 +7,7 @@ namespace Duyler\Aspect;
 use Duyler\Aspect\Build\Attribute\After;
 use Duyler\Aspect\Build\Attribute\Around;
 use Duyler\Aspect\Build\Attribute\Before;
+use Duyler\Aspect\Build\Attribute\Suspend;
 use Duyler\Aspect\Build\Attribute\Throwing;
 
 class AdviceStorage
@@ -19,6 +20,8 @@ class AdviceStorage
     private array $around = [];
     /** @var array<string, Throwing[]> */
     private array $throwing = [];
+    /** @var array<string, Suspend[]> */
+    private array $suspend = [];
 
     public function addBefore(string $actionId, Before $before): void
     {
@@ -40,6 +43,11 @@ class AdviceStorage
         $this->throwing[$actionId][] = $throwing;
     }
 
+    public function addSuspend(string $actionId, Suspend $suspend): void
+    {
+        $this->suspend[$actionId][] = $suspend;
+    }
+
     public function getBefore(string $actionId): array
     {
         return $this->before[$actionId] ?? [];
@@ -58,5 +66,10 @@ class AdviceStorage
     public function getThrowing(string $actionId): array
     {
         return $this->throwing[$actionId] ?? [];
+    }
+
+    public function getSuspend(string $actionId): array
+    {
+        return $this->suspend[$actionId] ?? [];
     }
 }
