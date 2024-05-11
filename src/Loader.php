@@ -8,6 +8,7 @@ use Duyler\Aspect\Build\AttributeHandler;
 use Duyler\Aspect\State\AfterStateHandler;
 use Duyler\Aspect\State\AroundStateHandler;
 use Duyler\Aspect\State\BeforeStateHandler;
+use Duyler\Aspect\State\SuspendStateHandler;
 use Duyler\Aspect\State\ThrowingStateHandler;
 use Duyler\DependencyInjection\ContainerInterface;
 use Duyler\ActionBus\Dto\Context;
@@ -26,11 +27,13 @@ class Loader implements PackageLoaderInterface
         $afterStateHandler = $this->container->get(AfterStateHandler::class);
         $aroundStateHandler = $this->container->get(AroundStateHandler::class);
         $throwingStateHandler = $this->container->get(ThrowingStateHandler::class);
+        $suspendStateHandler = $this->container->get(SuspendStateHandler::class);
 
         $loaderService->addStateHandler($beforeStateHandler);
         $loaderService->addStateHandler($afterStateHandler);
         $loaderService->addStateHandler($aroundStateHandler);
         $loaderService->addStateHandler($throwingStateHandler);
+        $loaderService->addStateHandler($suspendStateHandler);
         $loaderService->addStateContext(
             new Context(
                 [
@@ -38,6 +41,7 @@ class Loader implements PackageLoaderInterface
                     AfterStateHandler::class,
                     AroundStateHandler::class,
                     ThrowingStateHandler::class,
+                    SuspendStateHandler::class,
                 ],
             ),
         );
