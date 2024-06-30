@@ -9,7 +9,7 @@ use Duyler\ActionBus\Contract\State\MainSuspendStateHandlerInterface;
 use Duyler\ActionBus\State\Service\StateMainSuspendService;
 use Duyler\ActionBus\State\Suspend;
 use Duyler\Aspect\AdviceStorage;
-use Duyler\ActionBus\Formatter\ActionIdFormatter;
+use Duyler\ActionBus\Formatter\IdFormatter;
 use Duyler\ActionBus\State\StateContext;
 use Override;
 
@@ -20,7 +20,7 @@ class SuspendStateHandler implements MainSuspendStateHandlerInterface
     #[Override]
     public function handle(StateMainSuspendService $stateService, StateContext $context): void
     {
-        foreach ($this->adviceStorage->getSuspend(ActionIdFormatter::toString($stateService->getActionId())) as $advice) {
+        foreach ($this->adviceStorage->getSuspend(IdFormatter::toString($stateService->getActionId())) as $advice) {
             if ($advice->advice instanceof Closure) {
                 ($advice->advice)($stateService->getValue(), $stateService->getActionId());
                 return;
