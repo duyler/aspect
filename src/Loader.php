@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Duyler\Aspect;
 
+use Duyler\ActionBus\Build\Context;
 use Duyler\Aspect\Build\AttributeHandler;
 use Duyler\Aspect\State\AfterStateHandler;
 use Duyler\Aspect\State\AroundStateHandler;
@@ -11,7 +12,6 @@ use Duyler\Aspect\State\BeforeStateHandler;
 use Duyler\Aspect\State\SuspendStateHandler;
 use Duyler\Aspect\State\ThrowingStateHandler;
 use Duyler\DependencyInjection\ContainerInterface;
-use Duyler\ActionBus\Dto\Context;
 use Duyler\Framework\Loader\LoaderServiceInterface;
 use Duyler\Framework\Loader\PackageLoaderInterface;
 
