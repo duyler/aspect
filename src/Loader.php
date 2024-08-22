@@ -12,8 +12,8 @@ use Duyler\Aspect\State\BeforeStateHandler;
 use Duyler\Aspect\State\SuspendStateHandler;
 use Duyler\Aspect\State\ThrowingStateHandler;
 use Duyler\DependencyInjection\ContainerInterface;
-use Duyler\Framework\Loader\LoaderServiceInterface;
-use Duyler\Framework\Loader\PackageLoaderInterface;
+use Duyler\Builder\Loader\LoaderServiceInterface;
+use Duyler\Builder\Loader\PackageLoaderInterface;
 
 class Loader implements PackageLoaderInterface
 {

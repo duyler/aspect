@@ -6,7 +6,7 @@ namespace Duyler\Aspect\Build\Attribute;
 
 use Closure;
 use Duyler\Aspect\Build\AttributeHandler;
-use Duyler\Framework\Build\AttributeHandlerInterface;
+use Duyler\Builder\Build\AttributeHandlerInterface;
 
 class Suspend
 {

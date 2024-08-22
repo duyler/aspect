@@ -11,7 +11,7 @@ use Duyler\Aspect\Build\Attribute\Around;
 use Duyler\Aspect\Build\Attribute\Before;
 use Duyler\Aspect\Build\Attribute\Suspend;
 use Duyler\Aspect\Build\Attribute\Throwing;
-use Duyler\Framework\Build\AttributeHandlerInterface;
+use Duyler\Builder\Build\AttributeHandlerInterface;
 use InvalidArgumentException;
 
 class AttributeHandler implements AttributeHandlerInterface

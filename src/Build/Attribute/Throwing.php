@@ -6,8 +6,8 @@ namespace Duyler\Aspect\Build\Attribute;
 
 use Closure;
 use Duyler\Aspect\Build\AttributeHandler;
-use Duyler\Framework\Build\AttributeHandlerInterface;
-use Duyler\Framework\Build\AttributeInterface;
+use Duyler\Builder\Build\AttributeHandlerInterface;
+use Duyler\Builder\Build\AttributeInterface;
 
 class Throwing implements AttributeInterface
 {
