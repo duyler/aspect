@@ -5,12 +5,12 @@ declare(strict_types=1);
 namespace Duyler\Aspect\State;
 
 use Closure;
-use Duyler\ActionBus\Contract\State\MainSuspendStateHandlerInterface;
-use Duyler\ActionBus\State\Service\StateMainSuspendService;
-use Duyler\ActionBus\State\Suspend;
+use Duyler\EventBus\Contract\State\MainSuspendStateHandlerInterface;
+use Duyler\EventBus\State\Service\StateMainSuspendService;
+use Duyler\EventBus\State\Suspend;
 use Duyler\Aspect\AdviceStorage;
-use Duyler\ActionBus\Formatter\IdFormatter;
-use Duyler\ActionBus\State\StateContext;
+use Duyler\EventBus\Formatter\IdFormatter;
+use Duyler\EventBus\State\StateContext;
 use Override;
 
 class SuspendStateHandler implements MainSuspendStateHandlerInterface

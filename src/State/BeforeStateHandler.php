@@ -6,10 +6,10 @@ namespace Duyler\Aspect\State;
 
 use Closure;
 use Duyler\Aspect\AdviceStorage;
-use Duyler\ActionBus\Contract\State\ActionBeforeStateHandlerInterface;
-use Duyler\ActionBus\Formatter\IdFormatter;
-use Duyler\ActionBus\State\Service\StateActionBeforeService;
-use Duyler\ActionBus\State\StateContext;
+use Duyler\EventBus\Contract\State\ActionBeforeStateHandlerInterface;
+use Duyler\EventBus\Formatter\IdFormatter;
+use Duyler\EventBus\State\Service\StateActionBeforeService;
+use Duyler\EventBus\State\StateContext;
 
 class BeforeStateHandler implements ActionBeforeStateHandlerInterface
 {

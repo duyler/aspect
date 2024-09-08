@@ -4,11 +4,11 @@ declare(strict_types=1);
 
 namespace Duyler\Aspect\State;
 
-use Duyler\ActionBus\Build\ActionHandlerSubstitution;
-use Duyler\ActionBus\Contract\State\MainBeforeStateHandlerInterface;
-use Duyler\ActionBus\Formatter\IdFormatter;
-use Duyler\ActionBus\State\Service\StateMainBeforeService;
-use Duyler\ActionBus\State\StateContext;
+use Duyler\EventBus\Build\ActionHandlerSubstitution;
+use Duyler\EventBus\Contract\State\MainBeforeStateHandlerInterface;
+use Duyler\EventBus\Formatter\IdFormatter;
+use Duyler\EventBus\State\Service\StateMainBeforeService;
+use Duyler\EventBus\State\StateContext;
 use Duyler\Aspect\AdviceStorage;
 
 class AroundStateHandler implements MainBeforeStateHandlerInterface

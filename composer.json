@@ -11,11 +11,11 @@
         }
     ],
     "support": {
-        "docs": "https://duyler.org/docs/aspect/"
+        "docs": "https://duyler.org/en/docs/aspect/"
     },
     "require": {
         "php": "^8.3",
-        "duyler/action-bus": "dev-main",
+        "duyler/event-bus": "dev-main",
         "duyler/builder": "dev-main"
     },
     "require-dev": {
