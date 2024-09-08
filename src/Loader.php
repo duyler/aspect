@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Duyler\Aspect;
 
-use Duyler\ActionBus\Build\Context;
+use Duyler\EventBus\Build\Context;
 use Duyler\Aspect\Build\AttributeHandler;
 use Duyler\Aspect\State\AfterStateHandler;
 use Duyler\Aspect\State\AroundStateHandler;

@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Duyler\Aspect\Build;
 
-use Duyler\ActionBus\Build\Action;
+use Duyler\EventBus\Build\Action;
 use Duyler\Aspect\AdviceStorage;
 use Duyler\Aspect\Build\Attribute\After;
 use Duyler\Aspect\Build\Attribute\Around;
