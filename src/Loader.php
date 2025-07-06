@@ -4,16 +4,17 @@ declare(strict_types=1);
 
 namespace Duyler\Aspect;
 
-use Duyler\EventBus\Build\Context;
 use Duyler\Aspect\Build\AttributeHandler;
 use Duyler\Aspect\State\AfterStateHandler;
 use Duyler\Aspect\State\AroundStateHandler;
 use Duyler\Aspect\State\BeforeStateHandler;
 use Duyler\Aspect\State\SuspendStateHandler;
 use Duyler\Aspect\State\ThrowingStateHandler;
-use Duyler\DI\ContainerInterface;
 use Duyler\Builder\Loader\LoaderServiceInterface;
 use Duyler\Builder\Loader\PackageLoaderInterface;
+use Duyler\DI\ContainerInterface;
+use Duyler\EventBus\Build\Context;
+use Override;
 
 class Loader implements PackageLoaderInterface
 {
@@ -21,7 +22,8 @@ class Loader implements PackageLoaderInterface
         private ContainerInterface $container,
     ) {}
 
-    public function load(LoaderServiceInterface $loaderService): void
+    #[Override]
+    public function beforeLoadBuild(LoaderServiceInterface $loaderService): void
     {
         $beforeStateHandler = $this->container->get(BeforeStateHandler::class);
         $afterStateHandler = $this->container->get(AfterStateHandler::class);
@@ -48,4 +50,7 @@ class Loader implements PackageLoaderInterface
 
         $loaderService->addAttributeHandler($this->container->get(AttributeHandler::class));
     }
+
+    #[Override]
+    public function afterLoadBuild(LoaderServiceInterface $loaderService): void {}
 }
