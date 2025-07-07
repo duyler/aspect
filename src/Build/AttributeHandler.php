@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Duyler\Aspect\Build;
 
-use Duyler\EventBus\Build\Action;
 use Duyler\Aspect\AdviceStorage;
 use Duyler\Aspect\Build\Attribute\After;
 use Duyler\Aspect\Build\Attribute\Around;
@@ -12,6 +11,7 @@ use Duyler\Aspect\Build\Attribute\Before;
 use Duyler\Aspect\Build\Attribute\Suspend;
 use Duyler\Aspect\Build\Attribute\Throwing;
 use Duyler\Builder\Build\AttributeHandlerInterface;
+use Duyler\EventBus\Build\Action;
 use InvalidArgumentException;
 
 class AttributeHandler implements AttributeHandlerInterface
